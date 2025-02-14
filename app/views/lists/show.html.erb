@@ -3,7 +3,9 @@
   <ul>
     <% @list.bookmarks.each do |bookmark| %>
    <li>
-   <%= bookmark.movie.title %>
+   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "" %>)">
+    <%= bookmark.movie.title %>
+   </div>
    </li>
     <% end %>
   </ul>
