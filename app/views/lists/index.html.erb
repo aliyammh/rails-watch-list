@@ -1,5 +1,7 @@
 <h1>my list</h1>
 <% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
+   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "" %>)">
+    <%= link_to list.name, list_path(list) %>
+   </div>
 <% end %>
 <%= link_to "new list", new_list_path() %>
